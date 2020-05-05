@@ -13,22 +13,18 @@ train.dropna()
 train= train[(train['player_name']=='stephen curry') | (train['player_name']=='klay thompson')]
 
 # print(train.head())
-print(train.dtypes)
-# plt.scatter(train['SHOT_DIST'],train['CLOSE_DEF_DIST'],c=train['FGM'])
-# plt.title('field goal WRT shot distance and closest defender(combined)')
-# plt.xlabel('Shot distance')
-# plt.ylabel('Closest Defender distance')
-# plt.show()
-
-# plt.scatter(train['SHOT_DIST'],train['TOUCH_TIME'],c=train['FGM'])
-# plt.title('field goal WRT shot distance and Touch time(combined)')
-# plt.xlabel('Shot distance')
-# plt.ylabel('Touch time')
-# plt.show()
+#print(train.dtypes)
+plt.scatter(train['SHOT_DIST'],train['TOUCH_TIME'],c=train['FGM'])
+plt.title('field goal WRT shot distance and Touch time(combined)')
+plt.xlabel('Shot distance')
+plt.ylabel('Touch time')
+plt.show()
 
 #splittig data player wise
 curry_data = train[(train['player_name']=='stephen curry')]
 klay_data = train[(train['player_name']=='klay thompson')]
+plot_make_curry = curry_data[curry_data['FGM']==1]
+plot_miss_curry = curry_data[curry_data['FGM']==0]
 
 #overall shooter
 count_makes_curry=len(curry_data[curry_data['FGM']==1])
@@ -86,6 +82,7 @@ c_shotclk=curry_data['SHOT_CLOCK'].mean()
 k_shotclk=klay_data['SHOT_CLOCK'].mean()
 avg_shotclk=(c_shotclk+k_shotclk)/2
 print(avg_shotclk)
+
 curry_data_3pt=curry_data[curry_data['SHOT_CLOCK']>=avg_shotclk]
 count_makes_curry=len(curry_data_3pt[curry_data_3pt['FGM']==1])
 count_misses_curry=len(curry_data_3pt[curry_data_3pt['FGM']==0])
