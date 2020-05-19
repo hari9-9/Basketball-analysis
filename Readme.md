@@ -13,12 +13,19 @@ This section aims to prove How similar their playing Style is
 
 We will be looking at how each of them performs With respect to certain parameters Such as:
     -Time remaining on the Shot clock
+
     -Early Possession Scoring
+
     -Late Possession Scoring
+
     -Scoring based on how much time they have spent with the ball in that specific game
+
     -Scoring based on number of Dribbles Taken
+
     -Scoring early in the game
+
     -Scoring based on Closest defender distance
+    
 
 After which we  can conclude that they have a Similar Style of playing 
 
